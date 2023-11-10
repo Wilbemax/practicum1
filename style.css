@@ -10,18 +10,25 @@
 	src: url(fonts/AnonymousPro-Regular.ttf);
 }
 
-   *,*:before,*:after{ 
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box ; 
-	box-sizing: border-box; 
-   } 
+:root {
+	--transition: all 400ms ease;
+	--shadow: 1px 3px 30px -16px rgb(10 10 10);
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 body {
 	background: #f1f1f1;
 	margin: 0;
 	font-family: 'Anonymous Pro', sans-serif;
 }
-img{
-	pointer-events: none
+img {
+	pointer-events: none;
 }
 a,
 a:visited {
@@ -67,11 +74,21 @@ header {
 	align-items: center;
 }
 .header__wrapper-logo {
+	height: 67px;
 	width: 212.33px;
 }
-.header__wrapper-contact{
+.header__wrapper-logo a {
+	display: block;
+	height: 67px;
+	width: 212.33px;
+}
+.header__wrapper-contact {
 	padding: 0;
 }
+.header__wrapper-contact ul {
+	padding-inline-start: 0;
+}
+
 .header__wrapper-contact ul li {
 	display: inline-block;
 	font-size: 20px;
@@ -80,6 +97,9 @@ header {
 	font-weight: 700;
 	padding: 0;
 }
+.header__wrapper-contact ul li:last-child {
+	margin-right: 0;
+}
 
 .content-title {
 	font-family: 'IBM Plex Mono', monospace;
@@ -87,9 +107,16 @@ header {
 }
 .card {
 	background: #fff;
-	width: 371px;
-
+	max-width: 371px;
+	transition: var(--transition);
 	border-radius: 12px 12px 12px 12px;
+}
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: var(--shadow);
+}
+.content-cards img {
+	width: 100%;
 }
 .content-cards {
 	display: flex;
@@ -129,8 +156,16 @@ footer {
 	color: #fff;
 	font-weight: 700;
 }
+.footer__wrapper-contact ul {
+	padding-inline-start: 0;
+}
+
+.footer__wrapper-contact ul li:last-child {
+	margin-right: 0;
+}
 .footer-copyright p {
 	color: var(--text_gray, #a1a6b4);
+
 	height: 21px;
 	font-family: 'Anonymous Pro';
 	font-size: 16px;
@@ -141,35 +176,35 @@ footer {
 	align-items: center;
 	justify-content: center;
 }
-@media screen and (max-width: 1220px){
-    body{
+
+@media screen and (max-width: 1220px) {
+	body {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	.container{
-		width: 80%;
-		margin: 0 10%;
+	.container {
+		width: 90%;
 	}
-	h2{
-		font-size: calc(33px + 12 * (100vw / 1280));;
-
+	h2 {
+		font-size: calc(33px + 12 * (100vw / 1280));
 	}
-    .content-cards {
+	.content-cards {
 		justify-content: center;
 	}
-
 }
-@media screen and (max-width: 490px){
-   
-	.header__wrapper{
+@media screen and (max-width: 490px) {
+	.header__wrapper {
 		margin-top: 22px;
 		height: 122px;
 		flex-direction: column;
 		justify-content: center;
 	}
+	.content-title {
+		font-size: 32px;
+	}
+
 	footer {
-		
 		height: 164px;
 	}
 	.footer__wrapper {
