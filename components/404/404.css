@@ -72,9 +72,9 @@ p {
 	.error-foto img {
 		width: 300px;
 	}
-    .error-button{
-        padding: 6px 16px 6px 16px;
+	.error-button {
+		padding: 6px 16px 6px 16px;
 
-        font-size: 20;
-    }
+		font-size: 20;
+	}
 }
